@@ -1,5 +1,4 @@
-import { TaskCreator } from "./TaskCreator.js"
-// import { TaskCreator } from "./TaskCreator.js"
+import { TaskCreator } from "./modules/TaskCreator.js"
 
 function tryAddTask(title, description) {
     if (TaskCreator.titleAndDescriptionAreFilled(title, description)) {
@@ -30,7 +29,7 @@ function addTaskHTML(task) {
     taskList.appendChild(newTask)
 }
 
-function addTask() {
+export function addTask() {
     var title = document.getElementById("taskTitle").value
     var description = document.getElementById("taskDescription").value
     var newTask = tryAddTask(title, description)
@@ -38,5 +37,3 @@ function addTask() {
         addTaskHTML(newTask)
     }
 }
-
-export default { addTask }
