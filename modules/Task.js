@@ -1,4 +1,4 @@
-class Task {
+export class Task {
     constructor(title, description) {
         this.title = title
         this.description = description
@@ -10,5 +10,3 @@ class Task {
         Completed: 1
     }
 }
-
-module.exports = { Task }

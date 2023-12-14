@@ -1,6 +1,6 @@
-const { Task } = require('./Task')
+import { Task } from './Task.js'
 
-class TaskCreator {
+export class TaskCreator {
     static tasks = []
 
     static titleAndDescriptionAreFilled(title, description) {
@@ -16,8 +16,8 @@ class TaskCreator {
     }
 
     static addTask(title, description) {
-        tasks.push(new Task(title, description))
+        let task = new Task(title, description)
+        tasks.push(task)
+        return task
     }
 }
-
-module.exports = { TaskCreator }
