@@ -6,7 +6,7 @@ export class Task {
     }
     
     static Status = {
-        Incomplete: 0,
-        Completed: 1
+        Incomplete: "Incomplete",
+        Completed: "Completed"
     }
 }
