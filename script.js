@@ -37,3 +37,5 @@ export function addTask() {
         addTaskHTML(newTask)
     }
 }
+
+document.getElementById("addTask").addEventListener("click", addTask)
