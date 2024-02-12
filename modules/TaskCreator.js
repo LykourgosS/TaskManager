@@ -8,16 +8,16 @@ export class TaskCreator {
     }
 
     static getTaskWith(title) {
-        return tasks.find(x => x.title == title)
+        return TaskCreator.tasks.find(x => x.title == title)
     }
 
     static taskTitleExists(title) {
-        return tasks.find(x => x.title == title) != null
+        return TaskCreator.tasks.find(x => x.title == title) != null
     }
 
     static addTask(title, description) {
         let task = new Task(title, description)
-        tasks.push(task)
+        TaskCreator.tasks.push(task)
         return task
     }
 }
