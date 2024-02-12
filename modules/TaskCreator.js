@@ -4,7 +4,7 @@ export class TaskCreator {
     static tasks = []
 
     static titleAndDescriptionAreFilled(title, description) {
-        return !Boolean(title && description)
+        return Boolean(title && description)
     }
 
     static getTaskWith(title) {
