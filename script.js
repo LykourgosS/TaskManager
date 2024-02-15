@@ -32,11 +32,13 @@ function addTaskHTML(task) {
 }
 
 export function addTask() {
-    var title = document.getElementById("taskTitle").value
-    var description = document.getElementById("taskDescription").value
-    var newTask = tryAddTask(title, description)
+    var title = document.getElementById("taskTitle")
+    var description = document.getElementById("taskDescription")
+    var newTask = tryAddTask(title.value, description.value)
     if (newTask != null) {
         addTaskHTML(newTask)
+        title.value = ""
+        description.value = ""
     }
 }
 
