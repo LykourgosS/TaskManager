@@ -14,19 +14,21 @@ function tryAddTask(title, description) {
 }
 
 function addTaskHTML(task) {
-    let htmlTask = document.createElement("")
+    let htmlTask = document.createElement("div")
+    htmlTask.id = task.title
 
     htmlTask.innerHTML = `
-<div>
-    <strong>${task.title}</strong> - ${task.description}
+<strong>${task.title}</strong> - ${task.description}
 
-    <div class="taskStatus">${task.status}</div>
-    <button onclick="changeTaskStatus('${task.title}')">Change Status</button>
-</div>
+<div class="taskStatus">${task.status}</div>
+<button id="changeTaskStatus-${task.title}">Change Status</button>
 `;
 
     let taskList = document.getElementById("taskList")
-    taskList.appendChild(newTask)
+    taskList.appendChild(htmlTask)
+
+    document.getElementById(`changeTaskStatus-${task.title}`).addEventListener("click", () => changeTaskStatus(task.title))
+}
 }
 
 export function addTask() {
