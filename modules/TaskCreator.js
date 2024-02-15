@@ -20,4 +20,15 @@ export class TaskCreator {
         TaskCreator.tasks.push(task)
         return task
     }
+
+    static changeTaskStatus(title) {
+        let task = this.getTaskWith(title)
+        if (task != null) {
+            if (task.status == Task.Status.Completed) {
+                task.status = Task.Status.Incomplete
+            } else {
+                task.status = Task.Status.Completed
+            }
+        }
+    }
 }
