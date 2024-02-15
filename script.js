@@ -29,6 +29,17 @@ function addTaskHTML(task) {
 
     document.getElementById(`changeTaskStatus-${task.title}`).addEventListener("click", () => changeTaskStatus(task.title))
 }
+
+function clearHTMLTaskList() {
+    let taskList = document.getElementById("taskList")
+    while (taskList.firstChild) {
+        taskList.removeChild(taskList.lastChild)
+    }
+}
+
+function fillHTMLTaskList() {
+    clearHTMLTaskList()
+    TaskCreator.tasks.forEach(addTaskHTML);
 }
 
 export function addTask() {
@@ -40,6 +51,11 @@ export function addTask() {
         title.value = ""
         description.value = ""
     }
+}
+
+export function changeTaskStatus(title) {
+    TaskCreator.changeTaskStatus(title);
+    fillHTMLTaskList()
 }
 
 document.getElementById("addTask").addEventListener("click", addTask)
