@@ -43,9 +43,9 @@ function fillHTMLTaskList() {
 }
 
 export function addTask() {
-    var title = document.getElementById("taskTitle")
-    var description = document.getElementById("taskDescription")
-    var newTask = tryAddTask(title.value, description.value)
+    let title = document.getElementById("taskTitle")
+    let description = document.getElementById("taskDescription")
+    let newTask = tryAddTask(title.value, description.value)
     if (newTask != null) {
         addTaskHTML(newTask)
         title.value = ""
